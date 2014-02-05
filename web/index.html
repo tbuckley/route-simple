@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+  <title>Automaton</title>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript">
+    var socket = io.connect('http://localhost');
+    function echo(msg) {
+      socket.emit("DeviceEvent", "Echo", msg);
+    }
+  </script>
+</head>
+
+<body>
+  <button onclick="echo('foo')">Foo</button>
+  <button onclick="echo('bar')">Bar</button>
+</body>
+</html>
